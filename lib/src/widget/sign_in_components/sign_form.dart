@@ -1,6 +1,7 @@
 import 'package:e_commerce_ui/src/res/colors.dart';
 import 'package:e_commerce_ui/src/res/dimen.dart';
 import 'package:e_commerce_ui/src/res/strings.dart';
+import 'package:e_commerce_ui/src/ui/forgot_passaword.dart';
 import 'package:e_commerce_ui/src/utils/constants.dart';
 import 'package:e_commerce_ui/src/widget/custom_suffix_icon.dart';
 import 'package:e_commerce_ui/src/widget/default_button.dart';
@@ -62,10 +63,14 @@ class _SignFormState extends State<SignForm> {
         ),
         const Text('Remember me'),
         const Spacer(),
-        const Text(
-          'Forgot Password',
-          style: TextStyle(
-            decoration: TextDecoration.underline,
+        InkWell(
+          onTap: () =>
+              Navigator.popAndPushNamed(context, ForgotPassword.routeName),
+          child: const Text(
+            'Forgot Password',
+            style: TextStyle(
+              decoration: TextDecoration.underline,
+            ),
           ),
         ),
       ],

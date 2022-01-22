@@ -1,5 +1,6 @@
 import 'package:e_commerce_ui/src/res/colors.dart';
 import 'package:e_commerce_ui/src/res/dimen.dart';
+import 'package:e_commerce_ui/src/widget/no_account.dart';
 import 'package:e_commerce_ui/src/widget/sign_in_components/sign_form.dart';
 import 'package:flutter/material.dart';
 
@@ -37,24 +38,7 @@ class SignInBody extends StatelessWidget {
                 SizedBox(height: AppDimen.screenHeight * 0.08),
                 _socials(),
                 SizedBox(height: AppDimen.getProportionateScreenWidth(20)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Don\'t have an account?',
-                      style: TextStyle(
-                        fontSize: AppDimen.getProportionateScreenWidth(16),
-                      ),
-                    ),
-                    Text(
-                      'Sign Up',
-                      style: TextStyle(
-                        fontSize: AppDimen.getProportionateScreenWidth(16),
-                        color: AppColors.kPrimaryColor,
-                      ),
-                    ),
-                  ],
-                ),
+                const NoAccountText(),
               ],
             ),
           ),
