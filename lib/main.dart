@@ -1,6 +1,9 @@
 import 'package:e_commerce_ui/src/res/colors.dart';
+import 'package:e_commerce_ui/src/res/theme.dart';
 import 'package:e_commerce_ui/src/ui/splash/splash.dart';
+import 'package:e_commerce_ui/src/utils/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,17 +17,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-          textTheme: const TextTheme(
-            bodyText1: TextStyle(color: AppColors.kTextColor),
-            bodyText2: TextStyle(color: AppColors.kTextColor),
-          ),
-          scaffoldBackgroundColor: Colors.white,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          fontFamily: 'Muli'
-          // primarySwatch: Colors.blue,
-          ),
-      home: const Splash(),
+      theme: AppTheme.theme(),
+      // home: const Splash(),
+      initialRoute: Splash.routeName,
+      routes: routes,
       debugShowCheckedModeBanner: false,
     );
   }

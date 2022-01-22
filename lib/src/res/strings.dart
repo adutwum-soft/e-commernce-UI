@@ -1,7 +1,6 @@
 class AppStrings {
   // Form Error
-  final RegExp emailValidatorRegExp =
-      RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+
   static const String kEmailNullError = "Please Enter your email";
   static const String kInvalidEmailError = "Please Enter Valid Email";
   static const String kPassNullError = "Please Enter your password";
@@ -10,4 +9,9 @@ class AppStrings {
   static const String kNamelNullError = "Please Enter your name";
   static const String kPhoneNumberNullError = "Please Enter your phone number";
   static const String kAddressNullError = "Please Enter your address";
+
+  static const String welcomeBack = "Welcome Back";
+  static const String signIn = "Sign In";
+  static const String signInWith =
+      "Sign in with your email \nor continue with social media";
 }

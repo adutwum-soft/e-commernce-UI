@@ -1,6 +1,7 @@
 import 'package:e_commerce_ui/src/res/anim.dart';
 import 'package:e_commerce_ui/src/res/colors.dart';
 import 'package:e_commerce_ui/src/res/dimen.dart';
+import 'package:e_commerce_ui/src/ui/sign_in/sign_in.dart';
 import 'package:e_commerce_ui/src/widget/default_button.dart';
 import 'package:e_commerce_ui/src/widget/splash_content.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +69,7 @@ class _SplashBodyState extends State<SplashBody> {
                     const Spacer(flex: 3),
                     DefaultButton(
                       text: 'Continue',
-                      onPress: () {},
+                      onPress: () => _toSignIn(),
                     ),
                     const Spacer(),
                   ],
@@ -79,6 +80,10 @@ class _SplashBodyState extends State<SplashBody> {
         ),
       ),
     );
+  }
+
+  _toSignIn() {
+    Navigator.pushNamed(context, SignIn.routeName);
   }
 
   AnimatedContainer buildDot({required int index}) {
