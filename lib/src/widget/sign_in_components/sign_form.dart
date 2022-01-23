@@ -2,6 +2,7 @@ import 'package:e_commerce_ui/src/res/colors.dart';
 import 'package:e_commerce_ui/src/res/dimen.dart';
 import 'package:e_commerce_ui/src/res/strings.dart';
 import 'package:e_commerce_ui/src/ui/forgot_passaword.dart';
+import 'package:e_commerce_ui/src/ui/login_success.dart';
 import 'package:e_commerce_ui/src/utils/constants.dart';
 import 'package:e_commerce_ui/src/widget/custom_suffix_icon.dart';
 import 'package:e_commerce_ui/src/widget/default_button.dart';
@@ -41,6 +42,9 @@ class _SignFormState extends State<SignForm> {
             onPress: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
+                Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                  return const LoginSuccess();
+                }));
               }
             },
           ),
@@ -91,18 +95,19 @@ class _SignFormState extends State<SignForm> {
             errors.remove(AppStrings.kInvalidEmailError);
           });
         }
-        return null;
       },
       validator: (value) {
         if (value!.isEmpty && !errors.contains(AppStrings.kEmailNullError)) {
           setState(() {
             errors.add(AppStrings.kEmailNullError);
           });
+          return '';
         } else if (!emailValidatorRegExp.hasMatch(value) &&
             !errors.contains(AppStrings.kInvalidEmailError)) {
           setState(() {
             errors.add(AppStrings.kInvalidEmailError);
           });
+          return '';
         }
         return null;
       },
@@ -129,18 +134,19 @@ class _SignFormState extends State<SignForm> {
             errors.remove(AppStrings.kShortPassError);
           });
         }
-        return null;
       },
       validator: (value) {
         if (value!.isEmpty && !errors.contains(AppStrings.kPassNullError)) {
           setState(() {
             errors.add(AppStrings.kPassNullError);
           });
+          return '';
         } else if (value.length < 8 &&
             !errors.contains(AppStrings.kShortPassError)) {
           setState(() {
             errors.add(AppStrings.kShortPassError);
           });
+          return '';
         }
         return null;
       },
