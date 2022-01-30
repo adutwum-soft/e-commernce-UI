@@ -3,7 +3,7 @@ import 'package:e_commerce_ui/src/res/dimen.dart';
 import 'package:flutter/material.dart';
 
 class AppStyles {
-  final headingStyle = TextStyle(
+  static final headingStyle = TextStyle(
     fontSize: AppDimen.getProportionateScreenWidth(28),
     fontWeight: FontWeight.bold,
     color: Colors.black,
