@@ -150,10 +150,8 @@ class _SignUpFormState extends State<SignUpForm> {
       validator: (value) {
         if (value!.isEmpty) {
           return '';
-        } else if (password != conPassword) {
-          setState(() {
-            errors.add(AppStrings.kMatchPassError);
-          });
+        } else if (password != value) {
+          addError(error: AppStrings.kMatchPassError);
           return '';
         }
         return null;
