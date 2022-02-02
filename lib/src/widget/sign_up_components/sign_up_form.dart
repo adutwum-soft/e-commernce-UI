@@ -1,6 +1,6 @@
 import 'package:e_commerce_ui/src/res/dimen.dart';
 import 'package:e_commerce_ui/src/res/strings.dart';
-import 'package:e_commerce_ui/src/ui/profile.dart';
+import 'package:e_commerce_ui/src/ui/complete_profile.dart';
 import 'package:e_commerce_ui/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -57,7 +57,7 @@ class _SignUpFormState extends State<SignUpForm> {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
                 Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                  return const Profile();
+                  return const CompleteProfile();
                 }));
               }
             },
@@ -122,9 +122,7 @@ class _SignUpFormState extends State<SignUpForm> {
           return '';
         } else if (value.length < 8 &&
             !errors.contains(AppStrings.kShortPassError)) {
-          setState(() {
-            errors.add(AppStrings.kShortPassError);
-          });
+          addError(error: AppStrings.kShortPassError);
           return '';
         }
         return null;
@@ -143,9 +141,12 @@ class _SignUpFormState extends State<SignUpForm> {
     return TextFormField(
       onSaved: (newValue) => conPassword = newValue!,
       onChanged: (value) {
-        if (password == conPassword) {
+        if (value.isNotEmpty) {
+          removeError(error: AppStrings.kPassNullError);
+        } else if (value.isNotEmpty && password == conPassword) {
           removeError(error: AppStrings.kMatchPassError);
         }
+        conPassword = value;
       },
       validator: (value) {
         if (value!.isEmpty) {
