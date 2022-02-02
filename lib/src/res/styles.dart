@@ -10,6 +10,15 @@ class AppStyles {
     height: 1.5,
   );
 
+  static final otpStyle = InputDecoration(
+    contentPadding: EdgeInsets.symmetric(
+      vertical: AppDimen.getProportionateScreenWidth(15),
+    ),
+    border: outlineInputBorder(),
+    focusedBorder: outlineInputBorder(),
+    enabledBorder: outlineInputBorder(),
+  );
+
   final otpInputDecoration = InputDecoration(
     contentPadding: EdgeInsets.symmetric(
       vertical: AppDimen.getProportionateScreenWidth(15),

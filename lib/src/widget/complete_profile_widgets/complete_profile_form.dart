@@ -1,5 +1,6 @@
 import 'package:e_commerce_ui/src/res/dimen.dart';
 import 'package:e_commerce_ui/src/res/strings.dart';
+import 'package:e_commerce_ui/src/ui/otp_verif.dart';
 import 'package:flutter/material.dart';
 
 import '../custom_suffix_icon.dart';
@@ -42,6 +43,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
             onPress: () {
               if (_formKey.currentState!.validate()) {
                 // route to OTP page
+                Navigator.pushNamed(context, OTPVerify.routeName);
               }
             },
           ),
