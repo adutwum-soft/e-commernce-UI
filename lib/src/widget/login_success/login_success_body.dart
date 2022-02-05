@@ -1,4 +1,5 @@
 import 'package:e_commerce_ui/src/res/dimen.dart';
+import 'package:e_commerce_ui/src/ui/home.dart';
 import 'package:flutter/material.dart';
 
 import '../default_button.dart';
@@ -28,7 +29,10 @@ class LoginSuccessBody extends StatelessWidget {
           const Spacer(),
           SizedBox(
             width: AppDimen.screenWidth * 0.6,
-            child: DefaultButton(text: "Back to Home", onPress: () {}),
+            child: DefaultButton(
+              text: "Back to Home",
+              onPress: () => Navigator.pushNamed(context, Home.routeName),
+            ),
           ),
           const Spacer(),
         ],

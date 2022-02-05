@@ -12,4 +12,9 @@ class AppColors {
 
   static const kSecondaryColor = Color(0xFF979797);
   static const kTextColor = Color(0xFF757575);
+  static const darkBlue = Color(0xFF4A3298);
+
+  static const softRed = Color(0xFFF6625E);
+  static const slightlyDesaturatedViolet = Color(0xFF836DB8);
+  static const verySoftOrange = Color(0xFFDECB9C);
 }

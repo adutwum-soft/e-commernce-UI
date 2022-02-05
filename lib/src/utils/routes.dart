@@ -1,4 +1,5 @@
 import 'package:e_commerce_ui/src/ui/forgot_passaword.dart';
+import 'package:e_commerce_ui/src/ui/home.dart';
 import 'package:e_commerce_ui/src/ui/login_success.dart';
 import 'package:e_commerce_ui/src/ui/complete_profile.dart';
 import 'package:e_commerce_ui/src/ui/otp_verif.dart';
@@ -15,4 +16,5 @@ final Map<String, WidgetBuilder> routes = {
   Signup.routeName: (context) => const Signup(),
   CompleteProfile.routeName: (context) => const CompleteProfile(),
   OTPVerify.routeName: (context) => const OTPVerify(),
+  Home.routeName: (context) => const Home(),
 };
