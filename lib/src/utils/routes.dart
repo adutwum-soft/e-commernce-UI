@@ -1,3 +1,4 @@
+import 'package:e_commerce_ui/src/ui/details.dart';
 import 'package:e_commerce_ui/src/ui/forgot_passaword.dart';
 import 'package:e_commerce_ui/src/ui/home.dart';
 import 'package:e_commerce_ui/src/ui/login_success.dart';
